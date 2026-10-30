@@ -1,102 +1,207 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Flags War Arena - Remote Control</title>
+
 <style>
-*{box-sizing:border-box}
-body{
-margin:0;padding:20px;
-font-family:Arial,sans-serif;
-background:#0b1020;color:white;
+* {
+  box-sizing: border-box;
 }
-.panel{
-max-width:420px;margin:25px auto;padding:24px;
-background:#171f35;border:1px solid #34415f;
-border-radius:20px;
+
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: #0b1020;
+  color: white;
 }
-h1{text-align:center;font-size:25px;margin:0 0 8px}
-.sub{text-align:center;color:#aab8d4;margin-bottom:24px}
-label{display:block;margin:16px 0 8px;font-weight:bold}
-select,button{
-width:100%;padding:14px;border-radius:10px;
-font-size:16px;border:0;
+
+.panel {
+  max-width: 420px;
+  margin: 25px auto;
+  padding: 24px;
+  background: #171f35;
+  border: 1px solid #34415f;
+  border-radius: 20px;
 }
-select{background:#fff;color:#111}
-button{font-weight:bold;cursor:pointer;margin-top:14px}
-.return{background:#22c55e;color:#06220f}
-.shield{background:#38bdf8;color:#062033}
-button:disabled{opacity:.5;cursor:wait}
-#status{
-margin-top:18px;padding:12px;border-radius:10px;
-background:#0b1020;color:#dbeafe;
-overflow-wrap:anywhere;line-height:1.5;
+
+h1 {
+  text-align: center;
+  font-size: 25px;
+  margin: 0 0 8px;
 }
-.small{font-size:12px;color:#aab8d4;margin-top:15px;line-height:1.5}
+
+.sub {
+  text-align: center;
+  color: #aab8d4;
+  margin-bottom: 24px;
+}
+
+label {
+  display: block;
+  margin: 16px 0 8px;
+  font-weight: bold;
+}
+
+select, button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 16px;
+  border: 0;
+}
+
+select {
+  background: white;
+  color: #111;
+}
+
+button {
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 14px;
+}
+
+.return {
+  background: #22c55e;
+  color: #06220f;
+}
+
+.shield {
+  background: #38bdf8;
+  color: #062033;
+}
+
+button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+#status {
+  margin-top: 18px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #0b1020;
+  color: #dbeafe;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+}
+
+.small {
+  font-size: 12px;
+  color: #aab8d4;
+  margin-top: 15px;
+  line-height: 1.5;
+}
 </style>
 </head>
+
 <body>
+
 <div class="panel">
-<h1>🏟️ FLAGS WAR ARENA</h1>
-<div class="sub">REMOTE CONTROL PANEL</div>
 
-<label for="country">Select Country</label>
-<select id="country">
-<option value="USA">🇺🇸 USA</option>
-<option value="India">🇮🇳 India</option>
-<option value="United Kingdom">🇬🇧 United Kingdom</option>
-<option value="Japan">🇯🇵 Japan</option>
-<option value="China">🇨🇳 China</option>
-<option value="Russia">🇷🇺 Russia</option>
-<option value="Brazil">🇧🇷 Brazil</option>
-<option value="Germany">🇩🇪 Germany</option>
-<option value="France">🇫🇷 France</option>
-<option value="Canada">🇨🇦 Canada</option>
-<option value="Australia">🇦🇺 Australia</option>
-<option value="Pakistan">🇵🇰 Pakistan</option>
-<option value="Nepal">🇳🇵 Nepal</option>
-<option value="Bangladesh">🇧🇩 Bangladesh</option>
-<option value="South Korea">🇰🇷 South Korea</option>
-<option value="North Korea">🇰🇵 North Korea</option>
-<option value="Saudi Arabia">🇸🇦 Saudi Arabia</option>
-<option value="United Arab Emirates">🇦🇪 UAE</option>
-<option value="Turkey">🇹🇷 Turkey</option>
-<option value="Italy">🇮🇹 Italy</option>
-<option value="Spain">🇪🇸 Spain</option>
-<option value="Mexico">🇲🇽 Mexico</option>
-<option value="Argentina">🇦🇷 Argentina</option>
-<option value="Indonesia">🇮🇩 Indonesia</option>
-<option value="South Africa">🇿🇦 South Africa</option>
-</select>
+  <h1>🏟️ FLAGS WAR ARENA</h1>
+  <div class="sub">REMOTE CONTROL PANEL</div>
 
-<button class="return" id="returnBtn" disabled>↩ RETURN COUNTRY</button>
-<button class="shield" id="shieldBtn" disabled>🛡️ SHIELD 30s</button>
+  <label for="country">Select Country</label>
 
-<div id="status">Connecting to Firebase…</div>
-<div class="small">
-RETURN restores an eliminated country.<br>
-SHIELD protects an active country for 30 seconds.<br>
-Automatic elimination continues in the game.
-</div>
+  <select id="country">
+    <option value="United States">🇺🇸 USA</option>
+    <option value="China">🇨🇳 China</option>
+    <option value="India">🇮🇳 India</option>
+    <option value="Brazil">🇧🇷 Brazil</option>
+    <option value="Canada">🇨🇦 Canada</option>
+    <option value="Germany">🇩🇪 Germany</option>
+    <option value="France">🇫🇷 France</option>
+    <option value="Japan">🇯🇵 Japan</option>
+    <option value="Australia">🇦🇺 Australia</option>
+    <option value="Russia">🇷🇺 Russia</option>
+    <option value="South Korea">🇰🇷 South Korea</option>
+    <option value="United Kingdom">🇬🇧 United Kingdom</option>
+    <option value="Mexico">🇲🇽 Mexico</option>
+    <option value="Spain">🇪🇸 Spain</option>
+    <option value="Saudi Arabia">🇸🇦 Saudi Arabia</option>
+    <option value="South Africa">🇿🇦 South Africa</option>
+    <option value="Argentina">🇦🇷 Argentina</option>
+    <option value="Sweden">🇸🇪 Sweden</option>
+    <option value="Finland">🇫🇮 Finland</option>
+    <option value="Denmark">🇩🇰 Denmark</option>
+    <option value="Netherlands">🇳🇱 Netherlands</option>
+    <option value="Belgium">🇧🇪 Belgium</option>
+    <option value="Switzerland">🇨🇭 Switzerland</option>
+    <option value="Austria">🇦🇹 Austria</option>
+    <option value="Ukraine">🇺🇦 Ukraine</option>
+    <option value="Greece">🇬🇷 Greece</option>
+    <option value="Portugal">🇵🇹 Portugal</option>
+    <option value="Ireland">🇮🇪 Ireland</option>
+    <option value="New Zealand">🇳🇿 New Zealand</option>
+    <option value="Indonesia">🇮🇩 Indonesia</option>
+    <option value="Pakistan">🇵🇰 Pakistan</option>
+    <option value="Nepal">🇳🇵 Nepal</option>
+    <option value="Sri Lanka">🇱🇰 Sri Lanka</option>
+    <option value="Thailand">🇹🇭 Thailand</option>
+    <option value="Vietnam">🇻🇳 Vietnam</option>
+    <option value="Philippines">🇵🇭 Philippines</option>
+    <option value="Malaysia">🇲🇾 Malaysia</option>
+    <option value="Singapore">🇸🇬 Singapore</option>
+    <option value="Nigeria">🇳🇬 Nigeria</option>
+    <option value="Kenya">🇰🇪 Kenya</option>
+    <option value="Morocco">🇲🇦 Morocco</option>
+    <option value="Algeria">🇩🇿 Algeria</option>
+    <option value="Chile">🇨🇱 Chile</option>
+    <option value="Colombia">🇨🇴 Colombia</option>
+    <option value="Peru">🇵🇪 Peru</option>
+    <option value="Venezuela">🇻🇪 Venezuela</option>
+    <option value="Cuba">🇨🇺 Cuba</option>
+    <option value="Jamaica">🇯🇲 Jamaica</option>
+    <option value="Iceland">🇮🇸 Iceland</option>
+    <option value="Czechia">🇨🇿 Czechia</option>
+    <option value="Romania">🇷🇴 Romania</option>
+    <option value="Hungary">🇭🇺 Hungary</option>
+    <option value="Croatia">🇭🇷 Croatia</option>
+    <option value="Serbia">🇷🇸 Serbia</option>
+    <option value="Qatar">🇶🇦 Qatar</option>
+    <option value="United Arab Emirates">🇦🇪 UAE</option>
+    <option value="Iran">🇮🇷 Iran</option>
+  </select>
+
+  <button class="return" id="returnBtn" disabled>
+    ↩ RETURN COUNTRY
+  </button>
+
+  <button class="shield" id="shieldBtn" disabled>
+    🛡️ SHIELD 30s
+  </button>
+
+  <div id="status">Connecting to Firebase...</div>
+
+  <div class="small">
+    RETURN restores an eliminated country.<br>
+    SHIELD protects an active country for 30 seconds.<br>
+    Automatic elimination continues in the game.
+  </div>
+
 </div>
 
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
-
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
-
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js"></script>
 
 <script>
+
+// FIREBASE CONFIG
+// यहाँ अपने गेम वाली Firebase config की values डालना।
+
 const firebaseConfig = {
-apiKey: "YOUR_API_KEY",
-authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-databaseURL: "YOUR_DATABASE_URL",
-projectId: "YOUR_PROJECT_ID",
-storageBucket: "YOUR_STORAGE_BUCKET",
-messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-appId: "YOUR_APP_ID"
+  apiKey: "PASTE_YOUR_API_KEY",
+  authDomain: "flags-war-arena-8609d.firebaseapp.com",
+  databaseURL: "PASTE_YOUR_DATABASE_URL",
+  projectId: "flags-war-arena-8609d",
+  storageBucket: "PASTE_YOUR_STORAGE_BUCKET",
+  messagingSenderId: "419617146899",
+  appId: "1:419617146899:web:924e36cce4ec398ec517e6"
 };
 
 const statusBox = document.getElementById("status");
@@ -104,61 +209,96 @@ const returnBtn = document.getElementById("returnBtn");
 const shieldBtn = document.getElementById("shieldBtn");
 
 let database = null;
+let connected = false;
 let busy = false;
 
 function setStatus(message) {
-statusBox.textContent = message;
+  statusBox.textContent = message;
 }
 
 try {
-firebase.initializeApp(firebaseConfig);
-database = firebase.database();
 
-firebase.auth().signInAnonymously()
-.then(() => {
-setStatus("✅ Connected. Select a country.");
-returnBtn.disabled = false;
-shieldBtn.disabled = false;
-})
-.catch(error => {
-setStatus("Sign-in error: " + error.message);
-});
+  firebase.initializeApp(firebaseConfig);
+
+  database = firebase.database();
+
+  firebase.auth().signInAnonymously()
+    .then(() => {
+
+      connected = true;
+
+      setStatus("✅ Connected! Select a country.");
+
+      returnBtn.disabled = false;
+      shieldBtn.disabled = false;
+
+    })
+    .catch(error => {
+
+      setStatus("Sign-in error: " + error.message);
+
+    });
+
 } catch (error) {
-setStatus("Firebase setup error: " + error.message);
+
+  setStatus("Firebase setup error: " + error.message);
+
 }
 
 async function sendCommand(action) {
-if (!database || busy) return;
 
-const country = document.getElementById("country").value;
-busy = true;
-returnBtn.disabled = true;
-shieldBtn.disabled = true;
+  if (!connected || !database || busy) {
+    return;
+  }
 
-try {
-await database.ref("arenaCommands").push({
-action: action,
-country: country,
-createdAt: Date.now()
+  const country = document.getElementById("country").value;
+
+  busy = true;
+
+  returnBtn.disabled = true;
+  shieldBtn.disabled = true;
+
+  try {
+
+    await database.ref("arenaCommands").push({
+
+      action: action,
+      country: country,
+      createdAt: Date.now()
+
+    });
+
+    setStatus(
+      "✅ Command sent: " +
+      action.toUpperCase() +
+      " — " +
+      country
+    );
+
+  } catch (error) {
+
+    setStatus("Command failed: " + error.message);
+
+  } finally {
+
+    busy = false;
+
+    returnBtn.disabled = false;
+    shieldBtn.disabled = false;
+
+  }
+
+}
+
+returnBtn.addEventListener("click", () => {
+  sendCommand("return");
 });
 
-setStatus(
-"✅ Command sent: " + action.toUpperCase() +
-" — " + country
-);
-} catch (error) {
-setStatus("Command failed: " + error.message);
-} finally {
-busy = false;
-returnBtn.disabled = false;
-shieldBtn.disabled = false;
-}
-}
+shieldBtn.addEventListener("click", () => {
+  sendCommand("shield");
+});
 
-returnBtn.addEventListener("click", () => sendCommand("return"));
-shieldBtn.addEventListener("click", () => sendCommand("shield"));
 </script>
 
 </body>
-</html>
-
+                                       </html>
